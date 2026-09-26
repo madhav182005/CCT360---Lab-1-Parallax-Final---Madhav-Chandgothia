@@ -1,0 +1,163 @@
+/* External CSS Stylesheet - Madhav Chandgothia's Badminton Journey */
+/* Saved this file as: style.css in the CCT360 Lab 1 Parallex folder */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: black;
+	color: white;
+}
+
+
+/* This allows the header content to remain on top while we scroll through the page and the z-index allows it to stay above other elements */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px 30px;
+
+	background-color: rgba(0, 0, 0, 0.8);
+
+	z-index: 10;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 20px;
+}
+
+
+/* Main container containing all story sections where each part uses the entire screen visible */
+.story-section {
+	min-height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+
+	padding: 80px;
+
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	overflow: hidden;
+}
+
+/* This creates a hidden placeholder right before the content of any HTML element that has the class name story-section and 
+allows the browser to add a virtual element just before the actual content inside that section */
+.story-section::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(0, 0, 0, 0.5);
+
+	z-index: 1;
+}
+
+/* This is the main content container that holds the text and images for each story section and places it over the background images */
+.content {
+	width: 700px;
+
+	text-align: center;
+
+	position: relative;
+	z-index: 2;
+
+	padding: 30px;
+}
+
+.content h1 {
+	font-size: 55px;
+	margin-bottom: 20px;
+}
+
+.content h2 {
+	font-size: 40px;
+	margin-bottom: 15px;
+}
+
+.content h3 {
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.content p {
+	font-size: 18px;
+	line-height: 1.6; /* This acts like a multiplier for the font size to determine the spacing between lines of text */
+}
+
+.intro {
+	background-image: url("images/baddy-journey.jpg");
+}
+
+.intro h1 {
+	font-size: 60px;
+}
+
+.intro h2 {
+	font-size: 30px;
+}
+
+/* Background images */
+
+.school {
+    background-image: url("images/school-badminton.jpg");
+}
+
+.upba {
+    background-image: url("images/upba-training.jpg");
+}
+
+.district {
+    background-image: url("images/district-competition.jpg");
+}
+
+.state {
+    background-image: url("images/state-tournament.jpg");
+}
+
+.ending {
+    background-image: url("images/badminton-trophy.jpg");
+}
+
+/* Hide the separate images because they are used as backgrounds */
+.image-container {
+    display: none;
+}
+
+/* Back to beginning button */
+
+.ending a {
+    display: inline-block;
+    color: white;
+
+    border: 2px solid white;
+    padding: 10px 20px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.ending a:hover {
+    background-color: white;
+    color: black;
+
+    transform: scale(1.05);
+}
